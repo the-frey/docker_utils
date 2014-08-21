@@ -12,7 +12,11 @@ module Deploy
 
     # The docker command to run, with flags after CONTAINER_NAME
     def run_command
-      "docker run -d --name #{Deploy::Config::CONTAINER_NAME} #{Deploy::Config::DOCKER_REPO}:#{self.tag}"
+      output = "docker run -d --name" 
+      output << " #{Deploy::Config::CONTAINER_NAME}" 
+      output << " " #=> place extra flags here
+      output << " #{Deploy::Config::DOCKER_REPO}:#{self.tag}"
+      output
     end
 
     # Set these
