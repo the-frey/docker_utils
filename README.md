@@ -12,4 +12,11 @@ Note: if you use zsh, you will probably have to write it like so:
 
 Note also that the lack of space after the comma is intentional.
 
-Inspiration in that quarter from Capistrano, more information can be found in their [documentation](https://github.com/capistrano/sshkit/blob/master/EXAMPLES.md). Thanks to lee (Mr. Capistrano) for pointing me in the direction of `sshkit`. 
+Inspiration in that quarter from Capistrano, more information can be found in their [documentation](https://github.com/capistrano/sshkit/blob/master/EXAMPLES.md). Thanks to lee (Mr. Capistrano) for pointing me in the direction of `sshkit`.
+
+## TODO
+
+- YAML file for config
+- Full Deploy option
+- Redeploy option
+- Stop option
