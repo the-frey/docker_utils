@@ -1,0 +1,14 @@
+# In here you put one entry per docker you want to deploy. 
+# The rake task will process them in order.
+# Specify the flags under each container that need to be passed at runtime.
+
+#== Example ==#
+#
+# memcached:
+#   flags:
+#     - '-v /var/lib/memcacheddata:/data'
+#     - "-e FOO='BAR'"
+#   name: 'memcached-docker'
+#   repo: 'widgetcorp/memcached'
+#   tag: '1.2.3'
+#
