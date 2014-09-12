@@ -1,5 +1,7 @@
 # Dockistrano
 
+A rake and capistrano based tool for deploying docker containers on a remote host.
+
 ## Getting Started
 
 - Important: you will first will need a deploy user on your server that can access the `docker` command without needing a password.
