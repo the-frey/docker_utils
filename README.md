@@ -46,14 +46,14 @@ There are two examples in `docker_config.yml`, plus one below.
 - `name` is the name you want to assign the container. 
 - `repo` is the container image.
 
-      1:
-        stop: true
-        flags:
-          - '-v /var/lib/memcacheddata:/data'
-          - "-e FOO='BAR'"
-        name: 'memcached-docker'
-        repo: 'widgetcorp/memcached'
-        tag: '1.2.3'
+        1:
+          stop: true
+          flags:
+            - '-v /var/lib/memcacheddata:/data'
+            - "-e FOO='BAR'"
+          name: 'memcached-docker'
+          repo: 'widgetcorp/memcached'
+          tag: '1.2.3'
 
 ## TODO
 
