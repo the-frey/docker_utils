@@ -52,6 +52,4 @@ Write your container manifest in the order you want them deployed. The first key
 
 ## TODO
 
-- Full Deploy option
-- Redeploy option
-- Stop option
+- More tests!
