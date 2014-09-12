@@ -16,10 +16,9 @@ namespace :docker do
     on "#{user}@#{host}" do |host|
       
       # loop over docker_config containers
-      Deploy::Config::CONTAINERS.each_with_index do |c, i|
+      Deploy::Config::CONTAINERS.each do |c|
 
-        container_number = i + 1
-        container = Deploy::Container.new(user, host, c[container_number])
+        container = Deploy::Container.new(user, host, Deploy::Config::CONTAINERS[c])
 
         execute :sudo, "docker pull #{container.repo}:#{container.tag}"
         execute :sudo, "docker stop #{container.name}" if c["stop"] == true
