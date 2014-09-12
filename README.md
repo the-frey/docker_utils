@@ -5,6 +5,7 @@
 - Important: you will first will need a deploy user on your server that can access the `docker` command without needing a password.
 - Set default and system options in `config.yml`.
 - Set your container options in `docker_config.yml`.
+- If you do not want loads of logging, be sure to set `debug` to `false` in `config.yml`.
 
 ## About 
 

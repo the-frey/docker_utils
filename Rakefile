@@ -21,7 +21,7 @@ namespace :docker do
         container = Deploy::Container.new(user, host, c)
 
         execute :sudo, "docker pull #{container.repo}:#{container.tag}"
-        execute :sudo, "docker stop #{container.name}" if c[:stop] == true
+        execute :sudo, "docker stop #{container.name}" if c["stop"] == true
         execute :sudo, "docker rm #{container.name}"
         execute :sudo, "#{container.run_command}"
 
