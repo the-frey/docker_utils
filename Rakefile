@@ -8,7 +8,7 @@ require 'lib/deploy'
 require 'lib/sshconfig'
 
 namespace :docker do
-  desc "Deploy code to a host. Usage: docker:deploy[jeff,1.2.3]"
+  desc "Deploy code to a host. Usage: docker:deploy[jeff,example.com]"
   task :deploy, [:user, :host] do |t, args|
 
     user = args[:user] || Deploy::Config::CONFIG['default_user']
@@ -31,7 +31,7 @@ namespace :docker do
           execute :sudo, "docker stop #{container.name}"
           execute :sudo, "docker rm #{container.name}"
         end
-        
+
         execute :sudo, "#{container.run_command}"
 
       end
