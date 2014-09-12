@@ -1,10 +1,12 @@
 # In here you put one entry per docker you want to deploy. 
 # The rake task will process them in order.
 # Specify the flags under each container that need to be passed at runtime.
+# If a container of the same name exists on the host already and you want it stopped, then pass 'stop: true' as a flag.
 
 #== Example ==#
 #
 # memcached:
+#   stop: true
 #   flags:
 #     - '-v /var/lib/memcacheddata:/data'
 #     - "-e FOO='BAR'"

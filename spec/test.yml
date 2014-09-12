@@ -1,0 +1,8 @@
+memcached:
+  stop: true
+  flags:
+    - '-v /var/lib/memcacheddata:/data'
+    - "-e FOO='BAR'"
+  name: 'memcached-docker'
+  repo: 'widgetcorp/memcached'
+  tag: '1.2.3'

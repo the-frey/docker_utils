@@ -1,5 +1,3 @@
-require 'sshkit/dsl'
-
 SSHKit::Backend::Netssh.configure do |ssh|
   ssh.connection_timeout = 30
   ssh.ssh_options = {

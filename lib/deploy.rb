@@ -4,6 +4,7 @@ module Deploy
     attr_accessor :user, :host, :name, :repo, :tag, :flags
 
     def initialize(user, host, container_hash)
+      raise Exceptions::NoContainersError if container_hash == nil
       self.user = user
       self.host = host
       self.name = container_hash['name']
@@ -17,7 +18,7 @@ module Deploy
       output = "docker run -d --name"
       output << " #{self.name}"
 
-      # use splat args to unpack config here
+      # use flags array to unpack config here
       self.flags.each { |flag| output << " #{flag}" }
 
       output << " #{self.repo}:#{self.tag}"
@@ -28,8 +29,8 @@ module Deploy
 
   module Config
 
-    CONFIG = YAML.load('../config.yml')
-    CONTAINERS = YAML.load('../docker_config.yml')
+    CONFIG = YAML.load(File.open(File.dirname(__FILE__) + '/../config.yml'))
+    CONTAINERS = YAML.load(File.open(File.dirname(__FILE__) + '/../docker_config.yml'))
 
   end
 end
