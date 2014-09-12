@@ -35,7 +35,7 @@ The config options needed in `config.yml` are:
 
 ## Docker Config YAML Example
 
-Write your container manifest in `docker_config.yml`, in the order you want them deployed. The first key _must_ be a number, as per the example below. 
+Write your container manifest in `docker_config.yml`, in the order you want them deployed. The first key _must_ be a number, as per the example below. All containers run as daemon services using the `docker run -d` invocation.
 
 ### Options
 
@@ -58,3 +58,4 @@ There are two examples in `docker_config.yml`, plus one below.
 ## TODO
 
 - More tests!
+- Non-daemonized docker containers
