@@ -30,9 +30,9 @@ The config options needed are:
     default_user: 'deploy' # the user to execute commands as on the server - default shown
 
 
-## Docker Config Yml Example
+## Docker Config YAML Example
 
-Write your container manifest in the order you want them deployed. 
+Write your container manifest in the order you want them deployed. The first key _must_ be a number, as per the example below. 
 
 ### Options
 
@@ -41,7 +41,7 @@ Write your container manifest in the order you want them deployed.
 - `name` is the name you want to assign the container. 
 - `repo` is the container image.
 
-    memcached:
+    1:
       stop: true
       flags:
         - '-v /var/lib/memcacheddata:/data'

@@ -4,7 +4,8 @@ module Deploy
     attr_accessor :user, :host, :name, :repo, :tag, :flags
 
     def initialize(user, host, container_hash)
-      raise Exceptions::NoContainersError if container_hash == nil
+      self.validate(container_hash)
+
       self.user = user
       self.host = host
       self.name = container_hash['name']
@@ -23,6 +24,13 @@ module Deploy
 
       output << " #{self.repo}:#{self.tag}"
       output
+    end
+
+    def validate(container_hash)
+      raise Exceptions::NoContainerError if container_hash == nil
+      raise Exceptions::NoRepoError unless container_hash.has_key?("repo")
+      raise Exceptions::NoRepoError if container_hash["repo"] == nil
+      raise Exceptions::NoRepoError if container_hash["repo"] == ''
     end
 
   end

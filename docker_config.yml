@@ -5,7 +5,7 @@
 
 #== Example ==#
 #
-# memcached:
+# 1:
 #   stop: true
 #   flags:
 #     - '-v /var/lib/memcacheddata:/data'
