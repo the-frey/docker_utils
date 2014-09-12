@@ -20,7 +20,7 @@ module Deploy
       output << " #{self.name}"
 
       # use flags array to unpack config here
-      self.flags.each { |flag| output << " #{flag}" }
+      self.flags.each { |flag| output << " #{flag}" } unless self.flags.nil?
 
       output << " #{self.repo}:#{self.tag}"
       output

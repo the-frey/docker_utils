@@ -32,7 +32,7 @@ The config options needed are:
 
 ## Docker Config YAML Example
 
-Write your container manifest in the order you want them deployed. The first key should be a number, as per the example below. 
+Write your container manifest in the order you want them deployed. The first key _must_ be a number, as per the example below. 
 
 ### Options
 

@@ -3,7 +3,7 @@
 # Specify the flags under each container that need to be passed at runtime.
 # If a container of the same name exists on the host already and you want it stopped, then pass 'stop: true' as a flag.
 
-#== Example ==#
+#== Example 1 ==#
 #
 # 1:
 #   stop: true
@@ -14,3 +14,18 @@
 #   repo: 'widgetcorp/memcached'
 #   tag: '1.2.3'
 #
+
+#== Example 2 ==#
+#
+# 1: 
+#   stop: false
+#   flags:
+#     - "-e FOO='bar'"
+#   name: 'test-1'
+#   repo: 'ubuntu'
+# 2: 
+#   stop: false
+#   flags:
+#     - "-e FOO='baz'"
+#   name: 'test-2'
+#   repo: 'ubuntu'
